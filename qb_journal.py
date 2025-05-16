@@ -11,6 +11,7 @@ from quickbooks.objects.vendor import Vendor
 logger = logging.getLogger(__name__)
 
 class JournalEntryTransfer(QuickBooksClient):
+    """Class for transferring journal entries between QuickBooks companies"""
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.id_mapping['JournalEntry'] = {}

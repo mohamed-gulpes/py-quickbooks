@@ -7,6 +7,7 @@ from quickbooks.exceptions import QuickbooksException
 logger = logging.getLogger(__name__)
 
 class CustomerTransfer(QuickBooksClient):
+    """Class for transferring customers between QuickBooks companies"""
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.id_mapping['Customer'] = {}

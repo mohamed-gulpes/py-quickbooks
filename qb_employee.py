@@ -9,6 +9,7 @@ import time
 logger = logging.getLogger(__name__)
 
 class EmployeeTransfer(QuickBooksClient):
+    """Class for transferring employees between QuickBooks companies"""
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.id_mapping['Employee'] = {}

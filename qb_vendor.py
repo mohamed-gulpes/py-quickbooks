@@ -9,6 +9,7 @@ import time
 logger = logging.getLogger(__name__)
 
 class VendorTransfer(QuickBooksClient):
+    """Class for transferring vendors between QuickBooks companies"""
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.id_mapping['Vendor'] = {}
