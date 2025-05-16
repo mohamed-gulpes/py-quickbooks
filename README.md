@@ -1,7 +1,8 @@
 # QuickBooks Data Transfer Tool
 
-A Python tool for transferring data between QuickBooks Online companies. This tool supports transferring various QuickBooks entities including chart of accounts, employees, customers, classes, vendors, and journal entries.
+A Python tool for transferring data between QuickBooks Online companies without overwriting existing data unless specified. This tool supports transferring various QuickBooks entities including chart of accounts, employees, customers, classes, vendors, and journal entries.
 
+I needed a tool to copy data from one company to another without overwriting existing data. I didn't find one that met my needs, so I created this tool. 
 Feel free to contribute to the project.
 
 ## Features
