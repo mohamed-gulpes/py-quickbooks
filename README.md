@@ -79,28 +79,28 @@ poetry run python get_tokens.py
 
 When testing with the QuickBooks production environment, you need to use HTTPS for OAuth callbacks. ngrok provides a secure tunnel to your local development environment.
 
-1. Start your local Flask server (from get_tokens.py):
-```bash
-poetry run python get_tokens.py
-```
-
-2. In a new terminal, start ngrok:
+1. In a new terminal, start ngrok:
 ```bash
 ngrok http 5000
 ```
 
-3. Copy the HTTPS URL provided by ngrok (e.g., https://abc123.ngrok.io)
+2. Copy the HTTPS URL provided by ngrok (e.g., https://abc123.ngrok.io)
 
-4. Update your QuickBooks app settings:
+3. Update your QuickBooks app settings:
    - Log into the Intuit Developer portal
    - Go to your app's settings
    - Add the ngrok URL to your redirect URIs:
      - `https://abc123.ngrok.io/callback`
 
-5. Update your credentials.yml:
+4. Update your credentials.yml:
 ```yaml
 # Update redirect_uri with your ngrok URL
 redirect_uri: "https://abc123.ngrok.io/callback"
+```
+
+5. Start your local Flask server (from get_tokens.py):
+```bash
+poetry run python get_tokens.py
 ```
 
 **Important Notes:**
