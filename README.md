@@ -2,6 +2,8 @@
 
 A Python tool for transferring data between QuickBooks Online companies. This tool supports transferring various QuickBooks entities including chart of accounts, employees, customers, classes, vendors, and journal entries.
 
+Feel free to contribute to the project.
+
 ## Features
 
 - Transfer complete chart of accounts
