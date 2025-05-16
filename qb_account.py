@@ -48,12 +48,6 @@ class AccountTransfer(QuickBooksClient):
         """Check if an account with this name already exists"""
         return account_name in self.existing_accounts
 
-    def _has_positive_balance(self, account: Account) -> bool:
-        """Check if account has a positive balance"""
-        balance = getattr(account, 'CurrentBalance', 0) or 0
-        balance_with_subs = getattr(account, 'CurrentBalanceWithSubAccounts', 0) or 0
-        return balance > 0 or balance_with_subs > 0
-
     def _copy_account_attributes(self, source_account: Account, new_account: Account) -> None:
         """Copy all available attributes from source account to new account"""
         # Core attributes that must be set
