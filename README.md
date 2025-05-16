@@ -193,7 +193,7 @@ Each error is logged with detailed information for troubleshooting.
 
 ## License
 
-This project is licensed under the MIT License. Free and Open Source.
+This project is licensed under the MIT License. FREE and OPEN SOURCE.
 
 Copyright (c) 2025
 
