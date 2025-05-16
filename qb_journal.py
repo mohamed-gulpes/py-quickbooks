@@ -572,20 +572,20 @@ class JournalEntryTransfer(QuickBooksClient):
                 logger.info(f"  Number of lines: {len(new_journal.Line)}")
             
             # Try to save the journal entry
-            # if existing_journal:
-            #     created_journal = new_journal.save(qb=self.target_client)
-            #     logger.info(f"Successfully updated journal entry {journal_id}")
-            # else:
-            #     created_journal = new_journal.save(qb=self.target_client)
-            #     logger.info(f"Successfully created journal entry {journal_id}")
+            if existing_journal:
+                created_journal = new_journal.save(qb=self.target_client)
+                logger.info(f"Successfully updated journal entry {journal_id}")
+            else:
+                created_journal = new_journal.save(qb=self.target_client)
+                logger.info(f"Successfully created journal entry {journal_id}")
             
-            # # If successful, store the mapping
-            # if created_journal and created_journal.Id:
-            #     self.id_mapping['JournalEntry'][journal.Id] = created_journal.Id
-            #     # Add or update in existing journals
-            #     self.existing_journals[journal_id] = created_journal
-            #     logger.info(f"Journal entry {journal_id} saved with ID {created_journal.Id}")
-            #     return True
+            # If successful, store the mapping
+            if created_journal and created_journal.Id:
+                self.id_mapping['JournalEntry'][journal.Id] = created_journal.Id
+                # Add or update in existing journals
+                self.existing_journals[journal_id] = created_journal
+                logger.info(f"Journal entry {journal_id} saved with ID {created_journal.Id}")
+                return True
                     
         except QuickbooksException as qb_error:
             logger.error(f"QuickBooks API Error for journal entry {journal_id}:")

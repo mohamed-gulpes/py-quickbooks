@@ -177,14 +177,14 @@ class CustomerTransfer(QuickBooksClient):
             logger.info("Attempting to create customers individually...")
             success_count = 0
             skipped_count = 0
-            # for customer in customers:
-            #     customer_name = self._get_customer_display_name(customer)
-            #     if self._customer_exists(customer_name):
-            #         logger.info(f"Skipping existing customer: {customer_name}")
-            #         skipped_count += 1
-            #         success_count += 1  # Count as success since we mapped the ID
-            #     elif self._create_single_customer(customer):
-            #         success_count += 1
+            for customer in customers:
+                customer_name = self._get_customer_display_name(customer)
+                if self._customer_exists(customer_name):
+                    logger.info(f"Skipping existing customer: {customer_name}")
+                    skipped_count += 1
+                    success_count += 1  # Count as success since we mapped the ID
+                elif self._create_single_customer(customer):
+                    success_count += 1
             
             # Print final summary
             logger.info("\n=== Transfer Summary ===")
